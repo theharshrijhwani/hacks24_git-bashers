@@ -1,6 +1,9 @@
 import mongoose, { Schema } from "mongoose";
 
 const teamModel= new Schema({
+    designer_id: {
+        
+    },
     name:{
         type:String,
         required:true,
