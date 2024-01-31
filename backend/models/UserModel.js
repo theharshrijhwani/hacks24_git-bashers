@@ -15,7 +15,6 @@ const userModel = new Schema({
   },
   type: {
     type: String,
-    enum: ["designer", "client"],
     required: true,
   },
   createAt: {

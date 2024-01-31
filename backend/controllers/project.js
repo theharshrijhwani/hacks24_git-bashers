@@ -19,12 +19,9 @@ export const newProject = async (req, res) => {
 
   project = await Project.create({
     project_name,
-    location,
     address,
     budget,
     type_of_apartment,
-    number_of_bhk,
-    sqft,
     preferred_style,
     deadline,
     include_furniture,
