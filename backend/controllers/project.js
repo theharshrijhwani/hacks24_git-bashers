@@ -57,7 +57,7 @@ export const getProject = async(req,res)=>{
   })
 }
 
-import Project from "../models/project.js";
+
 
 export const updateStatus = async (req, res) => {
     const { requirements, completed_requirements } = req.body;
