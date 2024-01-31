@@ -65,3 +65,11 @@ export const singUp = async (req, res) => {
     });
   }
 };
+
+export const getAllUsers = async (req,res)=>{
+  const users = User.find();
+  res.json({
+    sucess:true , 
+    users,
+  })
+}
