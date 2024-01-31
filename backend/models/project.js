@@ -55,7 +55,8 @@ const ProjectModel= new Schema({
     status:{
         type:String,
         enum:["completed" , "in progress"],
-    }
+    },
+    
     
 })
 

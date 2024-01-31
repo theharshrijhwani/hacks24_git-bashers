@@ -44,3 +44,7 @@ export const getAllProjects = async (req,res) =>{
         projects,
     })
 }
+
+export const updateStatus = async(req,res)=>{
+    
+}
