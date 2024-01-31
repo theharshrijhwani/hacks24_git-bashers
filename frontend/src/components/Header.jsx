@@ -6,16 +6,18 @@ const Header = () => {
   return (
     <header className="bg-gray-800 text-white p-4">
       <div className="container mx-auto flex items-center justify-between">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center">
           <div className="text-xl font-bold mr-4">
             {/* Add your logo or site name here */}
-            UrbanSpaces
+            <Link to="/" className="text-white hover:text-white focus:text-white focus:outline-none">
+              UrbanSpaces
+            </Link>
           </div>
           <nav className="space-x-4">
             {/* Replace #home, #about, and #contact with the actual URLs or section IDs */}
-            <a href="#home">Home</a>
-            <a href="#about">About Us</a>
-            <a href="#contact">Contact</a>
+            <a href="#home" className="hover:underline">Home</a>
+            <a href="#about" className="hover:underline">About Us</a>
+            <a href="#contact" className="hover:underline">Contact</a>
           </nav>
         </div>
         <div className="flex items-center justify-end flex-grow">
@@ -26,7 +28,7 @@ const Header = () => {
             </button>
           </Link>
           <Link to="/signup">
-            <button className="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 focus:outline-none">
+            <button className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none">
               SignUp
             </button>
           </Link>
