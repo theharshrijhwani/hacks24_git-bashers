@@ -12,6 +12,7 @@ import LoginPage from "./pages/LoginPage.jsx";
 import Body from "./components/Body.jsx";
 import OngoingProjects from "./pages/OngoingProjects.jsx";
 import ProjectForm from "./pages/ProjectForm.jsx";
+import Marketplace from "./pages/MarketPlace.jsx";
 
 const App = () => {
   return (
@@ -24,12 +25,14 @@ const App = () => {
           <Route path="/client" element={<ClientDashboard />} />
           <Route path="/designer" element={<DesignerDashboard />} />
           <Route path="/add_project_form" element={<ProjectForm />} />
+          {/* <Route path="/market_place" element={<Marketplace />} /> */}
           <Route
             path="/ongoing_projects_designer"
             element={<OngoingProjects />}
           />
         </Routes>
       </Router>
+      {/* <Marketplace/> */}
     </>
   );
 };
