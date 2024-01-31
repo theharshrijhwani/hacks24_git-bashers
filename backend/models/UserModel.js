@@ -13,9 +13,9 @@ const userModel = new Schema({
     type: String,
     required: true,
   },
-  role:{
+  type: {
     type: String,
-    enum: ["designer", "client"], 
+    enum: ["designer", "client"],
     required: true,
   },
   createAt: {

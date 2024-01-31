@@ -5,7 +5,7 @@ import User from "../models/UserModel.js";
 
 export const singIn = (req, res) => {
   const user = req.body;
-  User.findOne({ email: user.username }).then((userDB) => {
+  User.findOne({ email: user.email }).then((userDB) => {
     console.log(`hello ${userDB}`);
     console.log(user.email);
     if (!userDB) {
@@ -20,6 +20,7 @@ export const singIn = (req, res) => {
             id: userDB._id,
             name: userDB.name,
             email: userDB.email,
+            type: userDB.type,
           };
           jwt.sign(payload, process.env.JWT_SECRET, (err, token) => {
             if (err) {
@@ -66,10 +67,10 @@ export const singUp = async (req, res) => {
   }
 };
 
-export const getAllUsers = async (req,res)=>{
+export const getAllUsers = async (req, res) => {
   const users = User.find();
   res.json({
-    sucess:true , 
+    sucess: true,
     users,
-  })
-}
+  });
+};
