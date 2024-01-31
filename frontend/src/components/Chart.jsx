@@ -3,7 +3,7 @@ import ReactApexChart from 'react-apexcharts';
 
 const ApexChart = () => {
   const [chartState, setChartState] = useState({
-    series: [44, 55, 41, 17, 15],
+    series: [75,25],
     options: {
       chart: {
         type: 'donut',
@@ -23,9 +23,9 @@ const ApexChart = () => {
   });
 
   return (
-    <div>
-      <div id="chart">
-        <ReactApexChart options={chartState.options} series={chartState.series} type="donut" />
+    <div className='w-[500px] m-auto'>
+      <div id="chart" className=''>
+        <ReactApexChart options={chartState.options} series={chartState.series} type="donut"/>
       </div>
       <div id="html-dist"></div>
     </div>

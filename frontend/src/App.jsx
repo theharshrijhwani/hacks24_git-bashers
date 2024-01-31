@@ -1,25 +1,37 @@
 "use client";
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import React from "react";
-import ClientDashboard from "./pages/ClientDashboard";
-import Navbar from "./components/navbar/Navbar";
-import LandingPage from "./pages/LandingPage";
-import DesignerDashboard from "./pages/DesignerDashboard";
-import Sidebar from "./components/SideMenu/SideMenu";
-import ApexChart from "./components/Chart";
 import ReactDOM from "react-dom";
+
+import ClientDashboard from "./pages/ClientDashboard";
+import DesignerDashboard from "./pages/DesignerDashboard";
 import SignUpPage from "./pages/SignUpPage";
-import LoginPage from "./pages/LoginPage.jsx"
-import Header from "./components/Header.jsx";
-import Body from "./components/Body.jsx"
-import Footer from "./components/Footer.jsx"
+import LoginPage from "./pages/LoginPage.jsx";
+import Body from "./components/Body.jsx";
+import OngoingProjects from "./pages/OngoingProjects.jsx";
+import ProjectForm from "./pages/ProjectForm.jsx";
+
 const App = () => {
-  return <div>
-    {/* <LoginPage/> */}
-    {/* <RegistrationForm/> */}
-     <Header/>
-     <Body/>
-     <Footer/>
-  </div>;
+  return (
+    <>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Body />} />
+          <Route path="/signin" element={<LoginPage />} />
+          <Route path="/signup" element={<SignUpPage />} />
+          <Route path="/client" element={<ClientDashboard />} />
+          <Route path="/designer" element={<DesignerDashboard />} />
+          <Route path="/add_project_form" element={<ProjectForm />} />
+          <Route
+            path="/ongoing_projects_designer"
+            element={<OngoingProjects />}
+          />
+        </Routes>
+      </Router>
+    </>
+  );
 };
 
 export default App;

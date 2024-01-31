@@ -1,5 +1,6 @@
 // Header.jsx
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -19,12 +20,16 @@ const Header = () => {
         </div>
         <div className="flex items-center justify-end flex-grow">
           {/* Add your custom styles to these buttons */}
-          <button className="bg-blue-500 text-white px-4 py-2 rounded-md mr-4 hover:bg-blue-600 focus:outline-none">
-            Login
-          </button>
-          <button className="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 focus:outline-none">
-            SignUp
-          </button>
+          <Link to="/signin">
+            <button className="bg-blue-500 text-white px-4 py-2 rounded-md mr-4 hover:bg-blue-600 focus:outline-none">
+              Login
+            </button>
+          </Link>
+          <Link to="/signup">
+            <button className="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 focus:outline-none">
+              SignUp
+            </button>
+          </Link>
         </div>
       </div>
     </header>

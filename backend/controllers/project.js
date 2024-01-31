@@ -1,7 +1,9 @@
+import project from "../models/project.js";
 import Project from "../models/project.js";
 
 export const newProject = async (req, res) => {
   const {
+    user_id,
     project_name,
     address,
     budget,
@@ -18,6 +20,7 @@ export const newProject = async (req, res) => {
   if (project) return "project already exist";
 
   project = await Project.create({
+    user_id,
     project_name,
     address,
     budget,
@@ -53,41 +56,48 @@ export const getAllProjects = async (req, res) => {
 };
 
 export const getProject = async (req, res) => {
-  const { id } = req.params;
+  console.log(req.params);
+  const { projectId } = req.params;
 
-  let project = await Project.findById({ id });
+  let project = await Project.findOne({ _id: projectId })
+    .then((result) => {
+      res.json({result})
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
 
-  res.json({
-    sucess: true,
-    project,
-  });
+export const getCurrStatus = async (req, res) => {
+  console.log(req.params);
+  const { projectId } = req.params;
+  // console.log(id);
+
+  const project = Project.findOne({ _id: projectId })
+    .then((result) => {
+      console.log(result);
+      const total = result.requirements.length;
+      const complete = result.completed_requirements;
+      const perc = (complete / total) * 100;
+      res.json({ percentage: perc });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 };
 
 export const updateStatus = async (req, res) => {
-  const { requirements, completed_requirements } = req.body;
-  const { id } = req.params;
-
-  let n = requirements.length;
-  let incomplete_requirements = n - completed_requirements;
-
-  let percent_completed = (incomplete_requirements / n) * 100;
-
-  try {
-    let project = await Project.findByIdAndUpdate(
-      id,
-      { $set: { percent_completed: percent_completed } },
-      { new: true }
-    );
-
-    if (!project) {
-      return res
-        .status(404)
-        .json({ success: false, message: "Project not found" });
-    }
-
-    res.json({ success: true, project });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ success: false, message: "Internal Server Error" });
+  const { completed_requirements } = req.body;
+  const { projectID } = req.params;
+  const project = await Project.findByIdAndUpdate(
+    projectID,
+    { $set: { completed_requirements: completed_requirements } },
+    { new: true }
+  );
+  if (!project) {
+    return res
+      .status(404)
+      .json({ success: false, message: "Project not found" });
   }
+  res.json({ success: true, project });
 };

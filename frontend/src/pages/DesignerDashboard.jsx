@@ -5,18 +5,20 @@ import ServiceCard from "../components/ServiceCard";
 
 import data from "../data/services";
 import ApexChart from "../components/Chart";
+import Navbar from "../components/navbar/Navbar";
 
 const DesignerDashboard = () => {
   return (
     <div>
+      <Navbar/>
       <div className="role font-bold text-4xl p-4 md:text-5xl">Designer</div>
-      <div className="container m-auto p-5 flex justufy-center">
-        <div className="w-[500px] m-5 shadow-xl rounded-[5px]">
+      <div className="m-5 p-5 flex justufy-center bg-slate-400 rounded-[5px]">
+        <div className="w-[60vw]  items-center m-3 shadow-xl rounded-[5px] bg-white">
           <ApexChart />
         </div>
-        <div>
+        <div className="flex flex-col items-center justify-center">
           <div>
-            <div className="flex flex-col m-3 shadow-xl rounded-[5px] p-8 w-[500px]">
+            <div className="flex flex-col m-4 shadow-xl rounded-[5px] p-8 w-[500px] bg-white ">
               <div className="title flex mb-2">
                 <h2 className="text-2xl font-bold">Ongoing Projects</h2>
               </div>
@@ -24,6 +26,20 @@ const DesignerDashboard = () => {
                 <p>Lorem ipsum dolor sit amet.</p>
                 <p>Lorem ipsum dolor sit amet.</p>
                 <p>Lorem ipsum dolor sit amet.</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div className="flex justify-between items-center m-4 shadow-xl rounded-[5px] p-8 w-[500px] bg-white">
+              <div className="title flex flex-col items-center">
+                <h2 className="text-2xl font-bold m-1">Experience Rating</h2>
+                <p>Lorem ipsum dolor sit amet.
+                </p>
+              </div>
+              <div className="title flex flex-col">
+                <h2 className="text-2xl font-bold m-1">Expertise</h2>
+                <p>Lorem ipsum dolor sit amet.
+                </p>
               </div>
             </div>
           </div>
