@@ -37,3 +37,10 @@ export const newProject = async (req,res)=>{
     project = await Project.deleteOne({project_name});
  }
 
+export const getAllProjects = async (req,res) =>{
+    const projects = await Project.find();
+    res.json({
+        sucess:true,
+        projects,
+    })
+}
