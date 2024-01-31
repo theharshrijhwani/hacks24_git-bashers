@@ -20,6 +20,7 @@ export const singIn = (req, res) => {
             id: userDB._id,
             name: userDB.name,
             email: userDB.email,
+            type: userDB.type,
           };
           jwt.sign(payload, process.env.JWT_SECRET, (err, token) => {
             if (err) {

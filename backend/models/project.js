@@ -5,6 +5,9 @@ const ProjectModel = new Schema({
     type: mongoose.Schema.Types.ObjectId,
     required: true,
   },
+  designer_id: {
+    type: mongoose.Schema.Types.ObjectId,
+  },
   project_name: {
     type: String,
     required: true,
@@ -45,7 +48,10 @@ const ProjectModel = new Schema({
   status: {
     type: String,
     enum: ["Completed", "In Progress"],
-    default: "In Progress",
+  },
+  completed_requirements: {
+    type: Number,
+    default: 0,
   },
 });
 
