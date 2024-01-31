@@ -9,8 +9,9 @@ import Navbar from "../components/navbar/Navbar";
 
 const DesignerDashboard = () => {
   return (
-    <div>
+    <>
       <Navbar/>
+    <div >
       <div className="role font-bold text-4xl p-4 md:text-5xl">Designer</div>
       <div className="m-5 p-5 flex justufy-center bg-slate-400 rounded-[5px]">
         <div className="w-[60vw]  items-center m-3 shadow-xl rounded-[5px] bg-white">
@@ -51,6 +52,7 @@ const DesignerDashboard = () => {
         ))}
       </div>
     </div>
+    </>
   );
 };
 
