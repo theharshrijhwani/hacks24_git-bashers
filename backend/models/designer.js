@@ -1,7 +1,7 @@
 import mongoose, { Schema } from "mongoose";
 
 const DesignerModel = new Schema({
-  portfolio_Website: {
+  portfolio_website: {
     type: String,
   },
   expertise: {

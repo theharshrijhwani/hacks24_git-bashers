@@ -54,9 +54,10 @@ export const singUp = async (req, res) => {
   } else {
     user.password = await bcrypt.hash(req.body.password, 10);
     const userDB = new User({
-      name: user.first_name + " " + user.last_name,
+      name: user.firstname + " " + user.lastname,
       email: user.email.toLowerCase(),
       password: user.password,
+      type: user.type,
     });
 
     userDB.save();

@@ -21,19 +21,16 @@ const LoginPage = () => {
     // Add your login logic here using the loginData
     const email = document.getElementById("email");
     const password = document.getElementById("password");
-    console.log(email.value);
-    console.log(password.value);
     const data = {
       email: email.value,
       password: password.value,
     };
+    console.log(data);
     axios
-      .post("http://localhost:8080/auth/login", data)
+      .post("http://localhost:8080/auth/signin", data)
       .then((res) => {
         console.log(JSON.stringify(res));
         if (res.data.message === "success") {
-          console.log(res.data.message);
-          console.log(res.data.token);
           localStorage.setItem("token", res.data.token);
         }
       })
@@ -55,7 +52,10 @@ const LoginPage = () => {
     localStorage.setItem("id", info.id);
   };
 
-  
+  const onClickHandler = () => {
+    const type = localStorage.getItem("type").toLowerCase();
+    window.location.href = `http://localhost:5173/${type}`;
+  };
 
   return (
     <div className="h-screen md:flex">
@@ -110,6 +110,26 @@ const LoginPage = () => {
             type="submit"
             className="block w-full bg-indigo-600 mt-4 py-2 rounded-2xl text-white font-semibold mb-2"
           >
+            Password
+          </label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            value={loginData.password}
+            onChange={handleInputChange}
+            className="mt-1 p-2 w-full border rounded-md"
+            required
+          />
+        </div>
+        <button
+          type="submit"
+          className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none"
+          onClick={onClickHandler}
+        >
+          Login
+        </button>
+      </form>
             Login
           </button>
           {/* <span className="text-sm ml-2 hover:text-blue-500 cursor-pointer">Forgot Password ?</span> */}

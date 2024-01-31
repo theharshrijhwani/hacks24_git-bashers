@@ -31,9 +31,10 @@ const SignUpPage = () => {
     const lastName = document.getElementById("lastName");
     const email = document.getElementById("email");
     const password = document.getElementById("password");
-    const type = document.getElementById("type");
+    const type = document.getElementById("userType");
     const data = {
-      name: firstName.value + " " + lastName.value,
+      firstname: firstName.value,
+      lastname: lastName.value,
       email: email.value,
       password: password.value,
       type: type.value,

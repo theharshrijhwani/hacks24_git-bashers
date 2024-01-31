@@ -1,4 +1,3 @@
-import project from "../models/project.js";
 import Project from "../models/project.js";
 
 export const newProject = async (req, res) => {
@@ -61,7 +60,7 @@ export const getProject = async (req, res) => {
 
   let project = await Project.findOne({ _id: projectId })
     .then((result) => {
-      res.json({result})
+      res.json({ result });
     })
     .catch((err) => {
       console.log(err);

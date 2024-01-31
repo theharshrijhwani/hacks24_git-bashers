@@ -22,12 +22,11 @@ const ProjectModel = new Schema({
   },
   type_of_apartment: {
     type: String,
-    enum: ["Bunglow", "Flat"],
+    enum: ["bunglow", "flat"],
     required: true,
   },
   preferred_style: {
     type: String,
-    enum: ["Minimalist", "Modern", "Traditional"],
     required: true,
   },
   deadline: {
@@ -36,7 +35,7 @@ const ProjectModel = new Schema({
   },
   include_furniture: {
     type: String,
-    enum: ["Yes", "No"],
+    enum: ["on", "off"],
   },
   requirements: {
     type: [String],
