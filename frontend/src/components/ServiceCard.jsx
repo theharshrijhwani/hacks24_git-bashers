@@ -16,7 +16,7 @@ import {
   Tooltip,
 } from "@material-tailwind/react";
 
-const ServiceCard = ({ name, icon }) => {
+const ServiceCard = ({ name, icon, url }) => {
   return (
     <div className="carder-solid flex flex-col items-center justify-center shadow-lg rounded-3xl cursor-pointer hover:scale-110 h-[230px] w-[190px] gap-8">
       <div className="card-image">

@@ -1,6 +1,7 @@
 import React from "react";
 
 import profile from "../assets/profile.png";
+import rating from "../assets/rating.png";
 import ServiceCard from "../components/ServiceCard";
 
 import data from "../data/services";
@@ -24,9 +25,9 @@ const DesignerDashboard = () => {
                 <h2 className="text-2xl font-bold">Ongoing Projects</h2>
               </div>
               <div className="flex flex-col justify-center">
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p>Lorem ipsum dolor sit amet.</p>
+                <p>Aditya Shahani - Home</p>
+                <p>Vishal Chelwani - Bunglow</p>
+                <p>Vinay Patil - Home</p>
               </div>
             </div>
           </div>
@@ -34,12 +35,11 @@ const DesignerDashboard = () => {
             <div className="flex justify-between items-center m-4 shadow-xl rounded-[12px] p-8 w-[500px] bg-white">
               <div className="title flex flex-col items-center">
                 <h2 className="text-2xl font-bold m-1">Experience Rating</h2>
-                <p>Lorem ipsum dolor sit amet.
-                </p>
+                <img src={rating} alt=""  className="p-2"/>
               </div>
               <div className="title flex flex-col">
                 <h2 className="text-2xl font-bold m-1">Expertise</h2>
-                <p>Lorem ipsum dolor sit amet.
+                <p  className="p-2 text-xl">Traditional Style
                 </p>
               </div>
             </div>
