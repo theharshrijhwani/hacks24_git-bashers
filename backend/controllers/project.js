@@ -1,5 +1,6 @@
 import Project from "../models/project.js";
 
+
 export const newProject = async (req,res)=>{
     const {project_name , location , address , budget , type_of_apartment,number_of_bhk , sqft , preferred_style , deadline , include_furniture , requirements} = req.body;
 
@@ -45,6 +46,42 @@ export const getAllProjects = async (req,res) =>{
     })
 }
 
-export const updateStatus = async(req,res)=>{
-    
+export const getProject = async(req,res)=>{
+  const {id } = req.params;
+
+  let project = await Project.findById({id});
+
+  res.json({
+    sucess:true,
+    project
+  })
 }
+
+import Project from "../models/project.js";
+
+export const updateStatus = async (req, res) => {
+    const { requirements, completed_requirements } = req.body;
+    const { id } = req.params;
+
+    let n = requirements.length;
+    let incomplete_requirements = n - completed_requirements;
+
+    let percent_completed = (incomplete_requirements / n) * 100;
+
+    try {
+        let project = await Project.findByIdAndUpdate(
+            id,
+            { $set: { percent_completed: percent_completed } },
+            { new: true }
+        );
+
+        if (!project) {
+            return res.status(404).json({ success: false, message: 'Project not found' });
+        }
+
+        res.json({ success: true, project });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ success: false, message: 'Internal Server Error' });
+    }
+};
