@@ -27,7 +27,7 @@ const LoginPage = () => {
     };
     console.log(data);
     axios
-      .post("http://localhost:8008/auth/signin", data)
+      .post("http://localhost:8080/auth/signin", data)
       .then((res) => {
         console.log(JSON.stringify(res));
         if (res.data.message === "success") {
@@ -50,6 +50,11 @@ const LoginPage = () => {
     localStorage.setItem("email", info.email);
     localStorage.setItem("type", info.type);
     localStorage.setItem("id", info.id);
+  };
+
+  const onClickHandler = () => {
+    const type = localStorage.getItem("type").toLowerCase();
+    window.location.href = `http://localhost:5173/${type}`;
   };
 
   return (
@@ -93,6 +98,7 @@ const LoginPage = () => {
         <button
           type="submit"
           className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none"
+          onClick={onClickHandler}
         >
           Login
         </button>

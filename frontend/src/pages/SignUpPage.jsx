@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const SignUpPage = () => {
   const [formData, setFormData] = useState({
@@ -41,7 +42,7 @@ const SignUpPage = () => {
     console.log(data);
     // Add your signup logic here using the formData
     axios
-      .post("http://127.0.0.1:8008/auth/signup", data)
+      .post("http://localhost:8080/auth/signup", data)
       .then((res) => {
         if (res.status === 409) {
           setSuccess("User already exists, please login");
