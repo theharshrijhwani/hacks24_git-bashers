@@ -12,13 +12,21 @@ import LoginPage from "./pages/LoginPage.jsx"
 import Header from "./components/Header.jsx";
 import Body from "./components/Body.jsx"
 import Footer from "./components/Footer.jsx"
+import ProjectStatus from "./components/ProjectStatus.jsx";
+import OngoingProjects from "./pages/OngoingProjects.jsx";
 const App = () => {
   return <div>
     {/* <LoginPage/> */}
+    {/* <SignUpPage/> */}
+    {/* <ClientDashboard/> */}
+    {/* <OngoingProjects/> */}
+    
+    {/* <DesignerDashboard/> */}
+    {/* <LandingPage/> */}
     {/* <RegistrationForm/> */}
-     <Header/>
+     {/* <Header/>
      <Body/>
-     <Footer/>
+     <Footer/> */}
   </div>;
 };
 
