@@ -5,7 +5,7 @@ import User from "../models/UserModel.js";
 
 export const singIn = (req, res) => {
   const user = req.body;
-  User.findOne({ email: user.username }).then((userDB) => {
+  User.findOne({ email: user.email }).then((userDB) => {
     console.log(`hello ${userDB}`);
     console.log(user.email);
     if (!userDB) {
@@ -53,9 +53,10 @@ export const singUp = async (req, res) => {
   } else {
     user.password = await bcrypt.hash(req.body.password, 10);
     const userDB = new User({
-      name: user.first_name + " " + user.last_name,
+      name: user.firstname + " " + user.lastname,
       email: user.email.toLowerCase(),
       password: user.password,
+      type: user.type,
     });
 
     userDB.save();
@@ -66,10 +67,10 @@ export const singUp = async (req, res) => {
   }
 };
 
-export const getAllUsers = async (req,res)=>{
+export const getAllUsers = async (req, res) => {
   const users = User.find();
   res.json({
-    sucess:true , 
+    sucess: true,
     users,
-  })
-}
+  });
+};

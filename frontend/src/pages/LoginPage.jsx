@@ -21,19 +21,16 @@ const LoginPage = () => {
     // Add your login logic here using the loginData
     const email = document.getElementById("email");
     const password = document.getElementById("password");
-    console.log(email.value);
-    console.log(password.value);
     const data = {
       email: email.value,
       password: password.value,
     };
+    console.log(data);
     axios
-      .post("http://localhost:8080/auth/login", data)
+      .post("http://localhost:8008/auth/signin", data)
       .then((res) => {
         console.log(JSON.stringify(res));
         if (res.data.message === "success") {
-          console.log(res.data.message);
-          console.log(res.data.token);
           localStorage.setItem("token", res.data.token);
         }
       })

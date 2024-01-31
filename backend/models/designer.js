@@ -1,22 +1,20 @@
 import mongoose, { Schema } from "mongoose";
 
 const DesignerModel = new Schema({
-   rating :{
-    type:Number,
-    default:null,
-   },
-   portfolio_Website :{
-     type: String,
-     
-   },
-   expertise :{
-    type : [String],
-   },
-   experience :{
-    type:Number,
-    required:true,
-   }
+  designer_id: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
+  },
+  portfolio_website: {
+    type: String,
+  },
+  expertise: {
+    type: [String],
+  },
+  experience: {
+    type: Number,
+    required: true,
+  },
+});
 
-})
-
-export default mongoose.model("Designer" , DesignerModel);
+export default mongoose.model("Designer", DesignerModel);
