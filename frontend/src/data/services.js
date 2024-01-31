@@ -6,45 +6,49 @@ import history from "../assets/history.png";
 const services_data = [
   {
     name: "Ongoing Projects",
-    icon : ongoing
-    // icon: attractions,
+    icon : ongoing,
+    url: ''
   },
   {
     name: "Add Project",
-    icon : add
-    // icon: transport,
+    icon : add,
+    url: ''
   },
   {
     name: "Chat",
-    icon : chat
-    // icon: accommodation,
+    icon : chat,
+    url: ''
   },
   {
     name: "History",
-    icon : history
-    // icon: hotel,
+    icon : history,
+    url: ''
+  },{
+    name: '',
+    icon : '',
+    url: ''
   }
 ];
 const designer_data = [
   {
     name: "Ongoing Projects",
-    icon : ongoing
-    // icon: attractions,
+    icon : ongoing,
+    url: ''
   },
   {
     name: "Market Place",
-    icon : market_place
-    // icon: transport,
+    icon : market_place,
+    url: ''
   },
   {
     name: "Chat",
-    icon : chat
-    // icon: accommodation,
+    icon : chat,
+    url: ''
   },
   {
     name: "History",
-    icon : history
-    // icon: hotel,
+    icon : history,
+    url: ''
   }
 ]
 
