@@ -41,10 +41,6 @@ const ProjectModel = new Schema({
   requirements: {
     type: [String],
   },
-  percent_completed: {
-    type: Number,
-    default: 0,
-  },
   status: {
     type: String,
     enum: ["Completed", "In Progress"],
