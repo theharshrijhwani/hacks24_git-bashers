@@ -76,7 +76,7 @@ const LoginPage = () => {
         <div className="absolute -top-20 -right-20 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8"></div>
       </div>
       <div className="flex md:w-1/2 justify-center py-10 items-center bg-white">
-        <form className="bg-white max-w-md w-full p-6">
+        <form onSubmit={handleSubmit} className="bg-white max-w-md w-full p-6">
           <h1 className="text-gray-800 font-bold text-2xl mb-1">
             Hello Again!
           </h1>
@@ -134,6 +134,7 @@ const LoginPage = () => {
           <button
             type="submit"
             className="block w-full bg-indigo-600 mt-4 py-2 rounded-2xl text-white font-semibold mb-2"
+            onClick={onClickHandler}
           >
             Login
           </button>
