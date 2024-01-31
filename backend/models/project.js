@@ -56,7 +56,10 @@ const ProjectModel= new Schema({
         type:String,
         enum:["completed" , "in progress"],
     },
-    
+    completed_requirements:{
+        type:Number,
+        default:0,
+    }
     
 })
 
