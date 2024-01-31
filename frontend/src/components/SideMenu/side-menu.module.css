@@ -1,0 +1,192 @@
+.sideMenuMain {
+  padding: 9px 0 9px 9px;
+}
+
+.sideMenuContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 300px;
+  height: 100%;
+  background-color: var(--color-primary);
+  padding: 27px;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.logoWrapper {
+  text-align: center;
+}
+
+.logoWrapper img {
+  object-fit: contain;
+}
+
+.menuIcon {
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
+}
+
+.menuWrapper {
+  margin-top: 30px;
+  height: 60vh;
+  overflow-y: auto;
+}
+
+.menuItemsWrapper {
+  margin-top: 30px;
+}
+
+.menuTitle {
+  font-weight: 600;
+  color: var(--color-light-shade);
+  font-size: 0.875em;
+  margin-bottom: 6px;
+}
+
+.menuItemText {
+  font-weight: 500;
+  color: var(--color-light);
+  transform-origin: left;
+  transition: 0.4s all;
+  transform: scaleX(1);
+  white-space: nowrap;
+}
+
+.logoutText {
+  transform: scaleX(1);
+}
+
+.menuItem {
+  padding: 14px;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.active {
+  background-color: var(--color-primary-shade);
+  border-radius: 10px;
+}
+
+.logoutWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 500;
+  color: var(--color-light);
+  text-align: center;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.logoutWrapper:hover {
+  background-color: var(--color-primary-shade);
+}
+
+.iconWrapper {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary-shade);
+  border-radius: 10px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.isCollapsed .sideMenuContainer {
+  width: 100px;
+  padding: 27px 10px;
+  align-items: center;
+}
+
+.isCollapsed .menuItemText {
+  transform: scaleX(0);
+  width: 0;
+}
+
+.isCollapsed .menuItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 13px;
+  cursor: pointer;
+  justify-content: center;
+}
+
+.isCollapsed .menuTitle {
+  transform: scaleX(0);
+}
+
+.isCollapsed .menuItemsWrapper {
+  border-top: 1px solid var(--color-light);
+}
+
+.isCollapsed .menuItemsWrapper:nth-child(1) {
+  border-top: none;
+}
+
+.isCollapsed .logoutText {
+  transform: scaleX(0);
+  width: 0;
+}
+
+.isCollapsed .logoutWrapper {
+  gap: 0;
+}
+
+.isCollapsed .link {
+  gap: 0;
+}
+
+@media only screen and (max-width: 992px) {
+  .sideMenuMain {
+    padding: 0;
+  }
+
+  .isCollapsed .sideMenuContainer {
+  }
+
+  .overlay {
+    display: none;
+  }
+
+  .isCollapsed .menuItemText {
+    transform: none;
+    width: 100%;
+  }
+
+  .isCollapsed .menuTitle {
+    transform: none;
+  }
+
+  .sideMenuContainer {
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: -100%;
+  }
+
+  .sideMenuContainer.sideMenuActive {
+    left: 0;
+  }
+
+  .overlay {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+    top: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  /* Add styles for screens with max-width: 600px if needed */
+}
