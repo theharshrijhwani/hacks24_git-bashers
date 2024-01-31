@@ -1,11 +1,14 @@
 import React from "react";
 import ReactDOM from 'react-dom';
-import LoginPage from "./components/LoginPage";
-import Homepage from "./pages/Homepage";
-
+import SignUpPage from "./pages/SignUpPage";
+import LoginPage from "./pages/LoginPage.jsx"
+import RegistrationForm from "./pages/RegistrationForm.jsx"
+import Header from "./components/Header.jsx";
 const App = () => {
   return <div>
-    <LoginPage/>
+    {/* <LoginPage/> */}
+    {/* <RegistrationForm/> */}
+     {/* <Header/> */}
   </div>;
 };
 

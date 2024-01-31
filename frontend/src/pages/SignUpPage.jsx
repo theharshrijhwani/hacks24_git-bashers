@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 
-const LoginPage = () => {
+const SignUpPage = () => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
     email: '',
     password: '',
+    userType: '', // New field for user type
   });
 
   const [showPassword, setShowPassword] = useState(false);
@@ -24,13 +25,13 @@ const LoginPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add your login logic here using the formData
+    // Add your signup logic here using the formData
     console.log('Form Data Submitted:', formData);
   };
 
   return (
     <div className="container mx-auto mt-8 max-w-md">
-      <h2 className="text-3xl font-semibold mb-4">Login</h2>
+      <h2 className="text-3xl font-semibold mb-4">Sign Up</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label htmlFor="firstName" className="block text-sm font-medium text-gray-600">
@@ -95,6 +96,23 @@ const LoginPage = () => {
             {showPassword ? 'Hide' : 'Show'}
           </button>
         </div>
+        <div className="mb-4">
+          <label htmlFor="userType" className="block text-sm font-medium text-gray-600">
+            Type
+          </label>
+          <select
+            id="userType"
+            name="userType"
+            value={formData.userType}
+            onChange={handleInputChange}
+            className="mt-1 p-2 w-full border rounded-md"
+            required
+          >
+            <option value="">Select Type</option>
+            <option value="Designer">Designer</option>
+            <option value="Client">Client</option>
+          </select>
+        </div>
         <button
           type="submit"
           className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none"
@@ -106,4 +124,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default SignUpPage;
