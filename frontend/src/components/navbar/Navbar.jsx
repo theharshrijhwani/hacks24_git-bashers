@@ -22,7 +22,7 @@ const Navbar = () => {
         <div onClick={() => setNav(!nav)} className="cursor-pointer">
           <AiOutlineMenu size={30} />
         </div>
-        <h1 className="text-2xl sm:text-3xl lg:text-4xl px-2 font-bold">
+        <h1 className="text-4xl mt-2 ml-5 font-extrabold text-gray-800 mb-4 text-center">
           UrbanSpace
         </h1>
       </div>
@@ -32,9 +32,7 @@ const Navbar = () => {
           height={30}
           src={profile}
           alt="profile-icon"
-          className="mr-2"
         />
-        Profile
       </button>
 
       {/* Mobile Menu */}
@@ -58,7 +56,7 @@ const Navbar = () => {
           size={30}
           className="absolute right-4 top-4 cursor-pointer"
         />
-        <h2 className="text-2xl p-4 font-bold">UrbanSpace</h2>
+        <h2 className="text-3xl p-2 font-extrabold text-gray-800 text-center">UrbanSpace</h2>
         <nav>
           <ul className="flex flex-col p-4 text-gray-800">
             {menuItems.map(({ icon, text }, index) => {

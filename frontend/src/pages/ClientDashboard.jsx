@@ -6,12 +6,14 @@ import ApexChart from "../components/Chart";
 
 import data from "../data/services";
 import Navbar from "../components/navbar/Navbar";
+import client from "../assets/client.jpg";
+import client2 from "../assets/client2.jpg";
 
 const ClientDashboard = () => {
   return (
     <div>
       <Navbar />
-      <div className="role font-bold text-4xl p-4 md:text-3xl">
+      <div className="text-5xl font-extrabold text-gray-800 mb-4 text-center">
         Welcome back, {localStorage.getItem("name")}
       </div>
       <div className="m-5 p-5 flex justufy-center bg-gradient-to-r from-indigo-500 rounded-[12px]">
@@ -44,10 +46,10 @@ const ClientDashboard = () => {
           <div className="font-bold text-center text-2xl mb-5">
             Current Status
           </div>
-          <div className="flex justify-around">
+          <div className="flex justify-around items-center justify-center">
             <div>
               <img
-                src="https://images.unsplash.com/photo-1505691723518-36a5ac3be353?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src={client}
                 alt=""
                 width={300}
                 height={300}
@@ -56,7 +58,7 @@ const ClientDashboard = () => {
             </div>
             <div>
               <img
-                src="https://images.unsplash.com/photo-1505691723518-36a5ac3be353?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src={client2}
                 alt=""
                 width={300}
                 height={300}
