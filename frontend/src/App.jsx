@@ -29,7 +29,7 @@ const App = () => {
           <Route path="/client" element={<ClientDashboard />} />
           <Route path="/designer" element={<DesignerDashboard />} />
           <Route path="/add_project_form" element={<ProjectForm />} />
-          {/* <Route path="/market_place" element={<Marketplace />} /> */}
+          <Route path="/marketplace" element={<Marketplace />} />
           <Route
             path="/ongoing_projects_designer"
             element={<OngoingProjects />}
