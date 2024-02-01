@@ -3,6 +3,7 @@ import add from "../assets/add.png";
 import market_place from "../assets/market_place.png";
 import chat from "../assets/chat.png";
 import history from "../assets/history.png";
+import feedback from "../assets/feedback.png";
 const services_data = [
   {
     name: "Ongoing Projects",
@@ -28,6 +29,11 @@ const services_data = [
     url: "http://localhost:5173/client_history",
     // icon: hotel,
   },
+  {
+    name: "Feedback",
+    icon: feedback,
+    url: "http://localhost:5173/feedback",
+  },
 ];
 const designer_data = [
   {
@@ -49,10 +55,9 @@ const designer_data = [
     // icon: accommodation,
   },
   {
-    name: "History",
-    icon: history,
-    url: "http://localhost:3000/designer_history",
-    // icon: hotel,
+    name: "View Feedback",
+    icon: feedback,
+    url: "http://localhost:5173/feedbacks",
   },
 ];
 

@@ -15,6 +15,8 @@ import Marketplace from "./pages/MarketPlace.jsx";
 import ClientHistory from "./pages/ClientHistory.jsx";
 import OngoingProjects from "./pages/OngoingProjects.jsx";
 import EcommercePage from "./pages/EcommercePage.jsx";
+import FeedbackForm from "./pages/FeedbackForm.jsx";
+import Feedbacks from "./pages/Feedbacks.jsx";
 
 const App = () => {
   return (
@@ -34,6 +36,8 @@ const App = () => {
           />
           <Route path="/client_history" element={<ClientHistory />} />
           <Route path="/ecommerce" element={<EcommercePage />} />
+          <Route path="/feedback" element={<FeedbackForm />} />
+          <Route path="/feedbacks" element={<Feedbacks />} />
         </Routes>
       </Router>
     </>
