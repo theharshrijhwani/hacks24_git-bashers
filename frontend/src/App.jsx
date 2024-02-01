@@ -10,9 +10,11 @@ import DesignerDashboard from "./pages/DesignerDashboard";
 import SignUpPage from "./pages/SignUpPage";
 import LoginPage from "./pages/LoginPage.jsx";
 import Body from "./components/Body.jsx";
-// import OngoingProjects from "./pages/OngoingProjects.jsx";
 import ProjectForm from "./pages/ProjectForm.jsx";
+import Marketplace from "./pages/MarketPlace.jsx";
+import ClientHistory from "./pages/ClientHistory.jsx";
 import OngoingProjects from "./pages/OngoingProjects.jsx";
+import EcommercePage from "./pages/EcommercePage.jsx";
 
 const App = () => {
   return (
@@ -30,6 +32,8 @@ const App = () => {
             path="/ongoing_projects_designer"
             element={<OngoingProjects />}
           />
+          <Route path="/client_history" element={<ClientHistory />} />
+          <Route path="/ecommerce" element={<EcommercePage />} />
         </Routes>
       </Router>
     </>
