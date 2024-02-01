@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import profile from "../assets/profile.png";
-import random from "../assets/random.jpg"
+import random from "../assets/random.jpg";
 import rating from "../assets/rating.png";
 import ServiceCard from "../components/ServiceCard";
 
@@ -127,66 +127,29 @@ const DesignerDashboard = () => {
 
           {/* Modal to display worker details */}
           {selectedWorker && (
-        <Modal onClose={handleCloseModal}>
-          {/* Display worker details, assigned projects, status, and add project button */}
-          <div className="text-center">
-            <h2 className="font-bold text-2xl">{selectedWorker.name}</h2>
-            <h3 className="font-bold text-2xl">Assigned Projects:</h3>
-            <ul>
-              {selectedWorker.projects.map((project, index) => (
-                <div key={index} className="flex justify-around items-center font-bold text-2xl">
-                  <div>{project.projectName}</div>
-                  <ProgressBar progress={project.status}/>
-                </div>
-              ))}
-            </ul>
-            {/* Add more details as needed */}
-            <button className="bg-black text-white p-2 rounded-[12px] text-md">Add Project</button>
-          </div>
-        </Modal>
-      )}
-        </div>
-        <div className="services-area flex flex-wrap gap-5 p-10 items-center justify-center mt-10 md:gap-[8rem] md:mt-5 shadow-3xl border-solid border-black border-2 rounded-[15px] w-[90vw] m-auto">
-        <br />
-        <div className="team-members flex items-center justify-evenly gap-8 mt-10">
-          {/* Team Member Card 1 */}
-          <div className="team-member-card hover:shadow-lg transition-all duration-300 ease-in-out w-[300px] h-[300px] flex flex-col items-center justify-center">
-            <img
-              src={random}
-              alt="Memeber-1"
-              className="w-32 h-32 rounded-full"
-            />
-            <h3 className="text-lg font-semibold mt-2">Ram Verma</h3>
-          </div>
-
-          {/* Team Member Card 2 */}
-          <div className="team-member-card hover:shadow-lg transition-all duration-300 ease-in-out w-[300px] h-[300px] flex flex-col items-center justify-center">
-            <img
-              src={random}
-              alt="Member-2"
-              className="w-32 h-32 rounded-full"
-            />
-            <h3 className="text-lg font-semibold mt-2">Sonu Sharma</h3>
-
-          </div>
-
-          {/* Team Member Card 3 */}
-          <div className="team-member-card hover:shadow-lg transition-all duration-300 ease-in-out w-[300px] h-[300px] flex flex-col items-center justify-center">
-            <img
-              src={random}
-              alt="Member-3"
-              className="w-32 h-32 rounded-full"
-            />
-            <h3 className="text-lg font-semibold mt-2">Abdul Khan</h3>
-          </div>
-          <div className="team-member-card hover:shadow-lg transition-all duration-300 ease-in-out w-[300px] h-[300px] flex flex-col items-center justify-center">
-            <img
-              src={random}
-              alt="Member-3"
-              className="w-32 h-32 rounded-full"
-            />
-            <h3 className="text-lg font-semibold mt-2">Ramesha Shukla</h3>
-          </div>
+            <Modal onClose={handleCloseModal}>
+              {/* Display worker details, assigned projects, status, and add project button */}
+              <div className="text-center">
+                <h2 className="font-bold text-2xl">{selectedWorker.name}</h2>
+                <h3 className="font-bold text-2xl">Assigned Projects:</h3>
+                <ul>
+                  {selectedWorker.projects.map((project, index) => (
+                    <div
+                      key={index}
+                      className="flex justify-around items-center font-bold text-2xl"
+                    >
+                      <div>{project.projectName}</div>
+                      <ProgressBar progress={project.status} />
+                    </div>
+                  ))}
+                </ul>
+                {/* Add more details as needed */}
+                <button className="bg-black text-white p-2 rounded-[12px] text-md">
+                  Add Project
+                </button>
+              </div>
+            </Modal>
+          )}
         </div>
         <div className="services-area flex flex-wrap gap-5 p-10 items-center justify-center mt-1 md:gap-[8rem] md:mt-5 shadow-3xl border-solid border-black border-2 rounded-[15px] w-[90vw] m-auto">
           {data.designer_data.map((service, idx) => (
