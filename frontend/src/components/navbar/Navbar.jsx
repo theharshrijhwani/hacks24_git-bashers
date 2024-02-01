@@ -79,3 +79,58 @@ const Navbar = () => {
 };
 
 export default Navbar;
+// Navigation.js
+
+// import React, { useState } from 'react';
+// import './Navbar.css';
+
+// const Navigation = () => {
+//   const [activeIndex, setActiveIndex] = useState(null);
+//   const [menuActive, setMenuActive] = useState(false);
+//    // Initially set to true
+
+//   const handleMouseOver = (index) => {
+//     setActiveIndex(index);
+//   };
+
+//   const handleMenuToggle = () => {
+//     setMenuActive(!menuActive);
+//   };
+
+//   return (
+//     <div className={`navigation ${menuActive ? 'active' : ''}`}>
+//       <div className="toggle" onClick={handleMenuToggle}>
+//         Toggle Menu
+//       </div>
+// <ul>
+//   <li onMouseOver={() => handleMouseOver(0)} className={activeIndex === 0 ? 'hovered' : ''}>
+//     <a href="#">
+//       <span className="icon">
+//         <ion-icon name="logo-apple"></ion-icon>
+//       </span>
+//       <span className="title">Orders</span>
+//     </a>
+//   </li>
+//   <li onMouseOver={() => handleMouseOver(1)} className={activeIndex === 1 ? 'hovered' : ''}>
+//     <a href="#">
+//       <span className="icon">
+//         <ion-icon name="logo-apple"></ion-icon>
+//       </span>
+//       <span className="title">Brand Name</span>
+//     </a>
+//   </li>
+//   <li onMouseOver={() => handleMouseOver(2)} className={activeIndex === 2 ? 'hovered' : ''}>
+//     <a href="#">
+//       <span className="icon">
+//         <ion-icon name="logo-apple"></ion-icon>
+//       </span>
+//       <span className="title">Help</span>
+//     </a>
+//   </li>
+//   {/* Add other list items here */}
+// </ul>
+//     </div>
+//   );
+// };
+
+// export default Navigation;

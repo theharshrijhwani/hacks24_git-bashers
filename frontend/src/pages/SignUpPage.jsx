@@ -31,9 +31,10 @@ const SignUpPage = () => {
     const lastName = document.getElementById("lastName");
     const email = document.getElementById("email");
     const password = document.getElementById("password");
-    const type = document.getElementById("type");
+    const type = document.getElementById("userType");
     const data = {
-      name: firstName.value + " " + lastName.value,
+      firstname: firstName.value,
+      lastname: lastName.value,
       email: email.value,
       password: password.value,
       type: type.value,
@@ -41,7 +42,7 @@ const SignUpPage = () => {
     console.log(data);
     // Add your signup logic here using the formData
     axios
-      .post("http://localhost:8080/auth/signup", data)
+      .post("http://localhost:8081/auth/signup", data)
       .then((res) => {
         if (res.status === 409) {
           setSuccess("User already exists, please login");

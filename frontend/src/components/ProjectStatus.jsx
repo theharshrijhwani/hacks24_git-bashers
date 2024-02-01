@@ -2,8 +2,6 @@ import React from "react";
 
 const projectsData = [
   { project: "Villa", start_date: "14/08/2023", percentage: 60, color: "red" },
-  { project: "Bunglow", start_date: "14/08/2023", percentage: 70, color: "emerald" },
-  { project: "Mumbai Project", start_date: "14/08/2023", percentage: 80, color: "purple" },
   { project: "Antilia", start_date: "14/08/2023", percentage: 75, color: "emerald" },
   { project: "Hiranandani", start_date: "14/08/2023", percentage: 30, color: "orange" },
 ];
