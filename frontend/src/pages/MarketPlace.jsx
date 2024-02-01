@@ -1,14 +1,45 @@
 // Marketplace.jsx
 
-import React from 'react';
-import MarketCard from '../components/MarketCard'; // Adjust the import path based on your project structure
+import React, { useEffect, useState } from "react";
+import MarketCard from "../components/MarketCard"; // Adjust the import path based on your project structure
+import axios from "axios";
 
 const Marketplace = () => {
+  const [projects, setProjects] = useState([]);
+  useEffect(() => {
+    axios
+      .get("http://localhost:8081/projects/all")
+      .then((res) => {
+        console.log(res);
+        setProjects(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
   // Sample data for demonstration
   const marketplaceData = [
-    { id: 1, clientName: 'John Doe', apartment: 'Apartment A', budget: 5000 },
-    { id: 2, clientName: 'Jane Smith', apartment: 'Apartment B', budget: 8000 },
-    { id: 3, clientName: 'Bob Johnson', apartment: 'Apartment C', budget: 6000 },
+    {
+      id: 1,
+      project_name: "John Doe",
+      address: "Apartment A",
+      budget: 5000,
+      client_name: "Harshvardhan Rijhwani",
+    },
+    {
+      id: 2,
+      project_name: "Jane Smith",
+      address: "address B",
+      budget: 8000,
+      client_name: "Ishita Hardasmalani",
+    },
+    {
+      id: 3,
+      project_name: "Bob Johnson",
+      address: "Apartment C",
+      budget: 6000,
+      client_name: "Ishita Hardasmalani",
+    },
   ];
 
   const sendQuotation = (clientId) => {
@@ -23,9 +54,10 @@ const Marketplace = () => {
         {marketplaceData.map((item) => (
           <MarketCard
             key={item.id}
-            clientName={item.clientName}
+            project_name={item.project_name}
             apartment={item.apartment}
             budget={item.budget}
+            client_name={item.client_name}
             onSendQuotation={() => sendQuotation(item.id)}
           />
         ))}
