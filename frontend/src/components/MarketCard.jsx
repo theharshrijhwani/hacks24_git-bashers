@@ -1,14 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
+
 // import { Button } from 'tailwind-styled-components';
 
-const MarketCard = ({ clientName, apartment, budget }) => {
+const MarketCard = ({ project_name, apartment, budget, client_name }) => {
   const sendQuotation = () => {
     // Add your send quotation logic here
   };
 
   return (
     <div className="bg-white shadow-md rounded-lg p-8 flex w-[1200px] justify-around items-center">
-      <h2 className="text-2xl font-semibold m-1 text-gray-800">{clientName}</h2>
+      <div className="flex flex-col items-center justify-center gap-5">
+        <h2 className="text-2xl font-semibold m-1 text-gray-800">
+          {project_name}
+        </h2>
+        <div>{client_name}</div>
+      </div>
       <p className="text-gray-600 m-4">{apartment}</p>
       <p className="text-xl font-semibold mb-4 text-gray-800">
         Budget: <br />
