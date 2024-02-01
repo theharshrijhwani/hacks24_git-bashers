@@ -42,7 +42,7 @@ const SignUpPage = () => {
     console.log(data);
     // Add your signup logic here using the formData
     axios
-      .post("http://localhost:8080/auth/signup", data)
+      .post("http://localhost:8081/auth/signup", data)
       .then((res) => {
         if (res.status === 409) {
           setSuccess("User already exists, please login");

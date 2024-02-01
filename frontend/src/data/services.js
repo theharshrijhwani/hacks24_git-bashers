@@ -25,7 +25,7 @@ const services_data = [
   {
     name: "History",
     icon: history,
-    url: "http://localhost:3000/client_history",
+    url: "http://localhost:5173/client_history",
     // icon: hotel,
   },
 ];

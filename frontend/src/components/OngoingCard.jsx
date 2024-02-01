@@ -23,7 +23,8 @@ const clientData = [
     deadline: "2022-12-31",
     includeFurniture: true,
     requirements: "Modern Style , Furniture Included",
-  },{
+  },
+  {
     clientName: "Harshad Mehta",
     projectName: "Modern Residence",
     address: "123 Main St, City",
@@ -33,7 +34,7 @@ const clientData = [
     deadline: "2022-12-31",
     includeFurniture: true,
     requirements: "Furniture Included , Budget: Rs.500,000, Modern Style",
-  }
+  },
   // Add more client data as needed
 ];
 
